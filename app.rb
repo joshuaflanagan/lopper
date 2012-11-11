@@ -69,3 +69,8 @@ get '/logout' do
   session["user_token"] = nil
   redirect '/'
 end
+
+get '/:owner/:repo' do
+  @owner_and_repo = "#{params[:owner]}/#{params[:repo]}"
+  erb :repo
+end
